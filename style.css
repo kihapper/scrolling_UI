@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css?family=Darker+Grotesque:500,600&display=swap');
+
+body {
+    font-family: 'Darker Grotesque', sans-serif;
+    color: aliceblue;
+    /*Somehow need to add this otherwise chaos*/
+    padding:0;
+    margin:0;
+}
+
+
+.intro{
+    background-image: url(https://images.unsplash.com/photo-1559191920-f7986b425abe?ixlib=rb-1.2.1&auto=format&fit=crop&w=2462&q=80);
+    background-size:cover;
+    background-position:center;
+
+}
+
+
+.big_title {
+    font-weight: 600;
+    font-size: 55px;
+    line-height: 1;
+}
+
+.small_title {
+    /* display: none; */
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 1;
+}
+
+.container {
+    min-height: 100vh;
+
+    /*flexbox and column for vertical*/
+    display: flexbox;
+    flex-direction: column;
+
+    /*margin auto　plus max-width makes them centered nicely*/
+    margin: auto;
+    max-width: 600px;
+    padding-top: 1000px;
+}
+
+
+
+
+/*white-space:nowrap makes sure it does not wrap*/
+/* overflow:hidden hides the one that goes out */
+
+.marquee {
+    height:130vh;
+    font-weight: 600;
+    position: absolute;
+
+    padding-top: 10px;
+
+    top: 0px;
+    left: 0px;
+    right: 0px;
+
+    width: 100%;
+    overflow: hidden;
+    mix-blend-mode: exclusion;
+}
+
+.marquee span{
+    font-size: 180px;
+    white-space: nowrap;
+    /* position:relative; */
+    display: flex;
+    line-height: 0.7;
+}
+
+.marquee span.left_move{
+    animation: moveLeft 1000s linear infinite;
+}
+
+
+.marquee span.right_move{
+    animation: moveRight 1000s linear infinite;
+}
+
+
+
+/*Learning about Animation*/
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    50% {
+        transform: translate(0);
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.appear {
+    opacity: 0;
+    animation-name: fadeIn;
+    animation-duration: 3s;
+    animation-delay: 1s;
+
+    /*Image in body layer doesn't work*/
+    /* By setting it forward it sets opacity 0 here as a starting point */
+    animation-fill-mode: forwards;
+}
+
+
+@keyframes moveLeft {
+
+0%{
+    transform: translate(0,0);
+}
+
+100%{
+    transform: translate(-2000vw,0);
+}
+
+}
+
+@keyframes moveRight {
+
+0%{
+    transform: translate(-2000vw,0);
+}
+
+100%{
+    transform: translate(0,0);
+}
+
+}
