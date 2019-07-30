@@ -11,41 +11,14 @@ body {
 
 }
 
-.entrance {
-    position: absolute:
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100vh;
-    height: 100vh;
-    text-indent: -9999px; /* we don't need to see the text, but some users and robots such as Google do */
- }
-
-
 .intro{
-    /*background-image: url(https://images.unsplash.com/photo-1524122209929-5bc27bd9c250?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80);
-    */
     background-image: url(https://images.unsplash.com/photo-1422405061047-61f0cf84c1dc?ixlib=rb-1.2.1&auto=format&fit=crop&w=2100&q=80);
-    
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 100vh;
 }
 
 
-.big_title {
-    font-weight: 600;
-    font-size: 55px;
-    line-height: 1;
-}
-
-.small_title {
-    /* display: none; */
-    font-weight: 500;
-    font-size: 40px;
-    line-height: 0.7;
-}
 
 .container {
     min-height: 100vh;
@@ -90,6 +63,10 @@ body {
     line-height: 0.8;
 }
 
+
+
+/*—————ANIMATION±———————*/
+
 .marquee span.left_move{
     animation: moveLeft 1000s linear infinite;
 }
@@ -124,22 +101,30 @@ body {
 }
 
 
-/*Learning about Animation*/
+/*—————ANIMATION SETTINGS———————*/
+
+
+/*Intro Animation*/
 @keyframes fadeIn {
     0% {
         opacity: 0;
-        transform: translateY(-300px);
+        transform: translateY(-700px);
     }
 
-    50% {
-        transform: translate(0);
+    50%{
+        opacity: 1;
     }
+
 
     100% {
+        transform: translate(0);
         opacity: 1;
     }
 }
 
+
+
+/*Scrolling Effect — Right Left*/
 
 @keyframes moveLeft {
 
@@ -153,6 +138,7 @@ body {
 
 }
 
+
 @keyframes moveRight {
 
 0%{
@@ -164,7 +150,6 @@ body {
 }
 
 }
-
 
 
 /*------Flicker----*/
