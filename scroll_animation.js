@@ -1,17 +1,31 @@
 
+
+//get all the element from HTML canvas
+let scrollTexts = document.querySelectorAll("section span")
+let bodyis = document.querySelector("body")
+
+//Is here to make the 
+let longText = []
+const link = "https://tinyfactories.space"
+
 function makeMarquee(){
+for(i = 0; i <= scrollTexts.length; i++){
 
-const title = 'Amsterdam London Tokyo Paris Tel Aviv Kyoto Taipei Berlin Capetown';
+    //In the longTest we multiply the text in HTML 30 times.
+    // Join is used to merge the multiplied text
+    longText[i] = new Array(90).fill(scrollTexts[i].innerHTML).join(' - ');
+    scrollTexts[i].innerHTML = longText[i];
+    scrollTexts[i].setAttribute("href", link);
+}}
 
-// join allows to merge the arrays
-const marqueeText = new Array(30).fill(title).join(' — ');
+makeMarquee()
 
-let marquee = document.querySelectorAll('.marquee span');
 
-    for(i = 0; i<marquee.length; i++){
-    marquee[i].innerHTML = marqueeText;
-    }
+function onClicker(){
 
+    bodyis.addEventListener("click",function(){
+        console.log("Click on");
+        //scrollTexts.style.mix-blend-mode = "hard-light";
+    })
+    
 }
-
-makeMarquee();
