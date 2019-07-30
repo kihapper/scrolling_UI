@@ -21,11 +21,3 @@ for(i = 0; i <= scrollTexts.length; i++){
 makeMarquee()
 
 
-function onClicker(){
-
-    bodyis.addEventListener("click",function(){
-        console.log("Click on");
-        //scrollTexts.style.mix-blend-mode = "hard-light";
-    })
-    
-}
